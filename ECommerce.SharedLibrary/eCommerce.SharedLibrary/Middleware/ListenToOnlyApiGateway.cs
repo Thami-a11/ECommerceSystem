@@ -16,7 +16,8 @@ namespace eCommerce.SharedLibrary.Middleware
                 await context.Response.WriteAsync("Service not unavailable");
                 return;
             }
-            else 
-                await next(context); 
+            else
+                await next(context);
+        }
     }
 }

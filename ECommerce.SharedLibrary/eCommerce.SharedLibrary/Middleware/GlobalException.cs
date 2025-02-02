@@ -1,4 +1,4 @@
-﻿using eCommerce.SharedLibrary.Log;
+﻿using eCommerce.SharedLibrary.Logs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -44,8 +44,10 @@ namespace eCommerce.SharedLibrary.Middleware
                     await ModifyHeader(context, title, message, statusCode);
                 }
             }
-            catch (Exception ex) { 
-                LogException.LogExceptions(ex);
+            catch (Exception ex)
+            {
+
+                LogExceptions.LogException(ex);
 
                 if (ex is TaskCanceledException || ex is TimeoutException) 
                 {
