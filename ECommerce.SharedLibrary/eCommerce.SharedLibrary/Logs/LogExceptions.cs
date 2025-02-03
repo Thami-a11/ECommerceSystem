@@ -6,6 +6,7 @@ namespace eCommerce.SharedLibrary.Logs
     {
         public static void LogException(Exception ex) 
         {
+            Console.WriteLine(ex.ToString());
             LogToFile(ex.Message);
             LogToConsole(ex.Message);
             LogToDebugger(ex.Message);
